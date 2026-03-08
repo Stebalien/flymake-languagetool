@@ -305,6 +305,7 @@ This function correctly handles emoji which count as two characters."
 
 (defun flymake-languagetool--check-all (errors source-buffer offset)
   "Check grammar ERRORS for SOURCE-BUFFER document, starting at OFFSET."
+  (font-lock-ensure)
   (let ((faces (with-current-buffer source-buffer
                  (flymake-languagetool--ignored-faces)))
         check-list)
